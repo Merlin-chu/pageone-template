@@ -1,1 +1,21 @@
-// 这里可以写点 JS，比如弹个 alert("欢迎来到我的页面！")
+const likeBtn = document.querySelector('.like-btn');
+const likeCount = document.querySelector('.like-count');
+let count = 0;
+
+likeBtn.addEventListener('click', function(event) {
+  event.preventDefault();
+  count++;
+  likeCount.textContent = count;
+  this.classList.toggle('liked');
+});
+
+const lineSpacingRange = document.getElementById('lineSpacingRange');
+
+lineSpacingRange.addEventListener('input', function() {
+  const lineSpacingValue = this.value;
+  document.body.style.lineHeight = lineSpacingValue;
+  const cardElements = document.querySelectorAll('.card');
+  cardElements.forEach(card => {
+    card.style.lineHeight = lineSpacingValue;
+  });
+});

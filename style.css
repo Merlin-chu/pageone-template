@@ -1,26 +1,104 @@
 body {
-  font-family: sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: '新宋体', 'Courier New', monospace;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  color: inherit;
+  background: linear-gradient(to bottom, rgba(169, 169, 169, 0.9), rgba(169, 169, 169, 0.3));
   margin: 0;
   padding: 2rem;
+  text-align: center;
+  line-height: 1.5;
 }
-
 h1 {
-  color: #007acc;
+  font-family: '黑体', 'Courier New', 'Microsoft YaHei', sans-serif;
+  font-size: 24px;
+  color: #0033ffd5; /* 这里设置颜色为红色，可根据需求修改 */
+  line-height: 1.8;
 }
-
 .card {
-  border: 1px solid #ddd;
+  font-family: '楷体', 'Courier New', 'Microsoft YaHei', '楷体', monospace;
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   padding: 1rem;
   margin: 1rem 0;
-  background: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(90, 95, 162, 0.37);
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  line-height: 1.4;
 }
-
 .card img {
   width: 100%;
   max-width: 300px;
   border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#likeBtn {
+  transition: transform 0.3s;
+}
+
+#likeBtn:active {
+  transform: scale(1.2);
+}
+
+#heartBtn {
+  transition: color 0.3s, transform 0.3s;
+}
+
+#heartBtn:active {
+  color: red;
+  transform: scale(1.2);
+}
+
+.heart {
+  background: url(http://demo.htmleaf.com/1511/201511131551/images/web_heart_animation.png);
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  background-size: 1450px;
+}
+
+.like-btn.liked .heart {
+  animation: heartBlast 0.8s steps(28) 1;
+  background-position: right;
+}
+
+@keyframes heartBlast {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+.like-count {
+  font-family: '微软雅黑', 'Courier New', '微软雅黑', monospace;
+  font-size: 14px;
+  margin-top: 13px;
+  margin-left: 0;
+  display: block;
+  text-align: center;
+  line-height: 1.6;
+}
+.like-btn {
+  display: flex;
+  justify-content: center;
+}
+
+#lineSpacingToolbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#lineSpacingToolbar label {
+  font-size: 14px;
 }
