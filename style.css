@@ -56,13 +56,9 @@ h1 {
 }
 
 .heart {
-  background: url(http://demo.htmleaf.com/1511/201511131551/images/web_heart_animation.png);
-  background-position: left;
-  background-repeat: no-repeat;
-  height: 50px;
-  width: 50px;
+  font-size: 36px;
+  transition: all 0.3s ease;
   cursor: pointer;
-  background-size: 1450px;
 }
 
 .like-btn.liked .heart {
@@ -88,9 +84,40 @@ h1 {
   text-align: center;
   line-height: 1.6;
 }
-.like-btn {
+.like-container {
   display: flex;
   justify-content: center;
+}
+
+.like-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.like-btn.liked .heart {
+  color: red;
+  animation: heartBeat 0.8s ease-in-out;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  14% { transform: scale(1.5); }
+  28% { transform: scale(1.2); }
+  42% { transform: scale(1.5); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1.2); }
+}
+
+.like-count {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #333;
 }
 
 #lineSpacingToolbar {
